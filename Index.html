@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Password Protected</title>
+<style>
+  /* Background gradient */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+  }
+
+  /* Card container */
+  #login {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px 60px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  }
+
+  #login h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+
+  input {
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: #ff4b2b;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #ff416c;
+  }
+
+  #error {
+    color: #ffcccb;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+<div id="login">
+  <h2>Enter Password to Access</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+  <p id="error"></p>
+</div>
+
+<script>
+function checkPassword() {
+  const pw = document.getElementById('password').value;
+  const correctPassword = ["rafaelq","ezekield"; // <-- change your password
+  if (pw === correctPassword) {
+    window.location.href = "main.html";
+  } else {
+    document.getElementById('error').textContent = "Wrong password!";
+  }
+}
+</script>
+</body>
+</html>
